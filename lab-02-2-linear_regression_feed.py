@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+'''
+    예제 1과 같지만 placeholder를 통해 구현할 수 있다. 
+'''
 # Lab 2 Linear Regression
 import tensorflow as tf
 tf.set_random_seed(777)  # for reproducibility

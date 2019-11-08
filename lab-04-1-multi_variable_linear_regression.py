@@ -1,7 +1,17 @@
+# -*- coding: utf-8 -*-
+'''
+<여러개의 입력(feature)의 Linear Regression>
+H(x1,x2,x3) = w1x1 + w2x2 + w3x3 + b
+x의 개수가 점점 많아지면 식도 길어진다.
+이를 행렬(matrix)의 곱으로 해결할 수 있다.
+==========> H(X) = XW 
+위와 같은 형태로 표현할 수 있다.(대문자는 행렬이라는 뜻)
+'''
 # Lab 4 Multi-variable linear regression
 import tensorflow as tf
 tf.set_random_seed(777)  # for reproducibility
 
+# matrix를 사용하지 않는 코드
 x1_data = [73., 93., 89., 96., 73.]
 x2_data = [80., 88., 91., 98., 66.]
 x3_data = [75., 93., 90., 100., 70.]

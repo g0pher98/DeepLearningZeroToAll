@@ -2,6 +2,7 @@
 import tensorflow as tf
 tf.set_random_seed(777)  # for reproducibility
 
+# matrix를 사용한 코드
 x_data = [[73., 80., 75.],
           [93., 88., 93.],
           [89., 91., 90.],

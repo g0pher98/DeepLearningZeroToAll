@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+'''
+    cost minimize 함수 직접 구현해보기
+'''
 # Lab 3 Minimizing Cost
 import tensorflow as tf
 
@@ -21,6 +25,9 @@ hypothesis = X * W
 cost = tf.reduce_mean(tf.square(hypothesis - Y))
 
 # Minimize: Gradient Descent using derivative: W -= learning_rate * derivative
+# cost minimize 로직. 아래 주석 코드와 같은 의미다.
+# optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.1)
+# train = optimizer.minimize(cost)
 learning_rate = 0.1
 gradient = tf.reduce_mean((W * X - Y) * X)
 descent = W - learning_rate * gradient

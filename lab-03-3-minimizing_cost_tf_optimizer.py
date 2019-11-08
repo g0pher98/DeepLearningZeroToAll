@@ -6,7 +6,7 @@ X = [1, 2, 3]
 Y = [1, 2, 3]
 
 # Set wrong model weights
-W = tf.Variable(5.0)
+W = tf.Variable(5.0) # 값을 원하는 값으로 초기화
 
 # Linear model
 hypothesis = X * W

@@ -22,12 +22,14 @@ cost = tf.reduce_mean(tf.square(hypothesis - Y))
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01)
 
 # Get gradients
+# 기울기 값을 추출할 수 있다. 이를 이용해서 어느정도 로직 수정이 가능하다
 gvs = optimizer.compute_gradients(cost)
 
 # Optional: modify gradient if necessary
 # gvs = [(tf.clip_by_value(grad, -1., 1.), var) for grad, var in gvs]
 
 # Apply gradients
+# 기울기 적용
 apply_gradients = optimizer.apply_gradients(gvs)
 
 # Launch the graph in a session.
