@@ -22,6 +22,7 @@ learning_rate란 cost함수의 최저점을 찾기 위해 찾아가는 걸음(ho
 -y*log(H(x)) - (1-y)*log(1 - H(x))
 
 위 함수의 모습은 흡사 이전에 사용했던 linear regression의 cost 함수와 비슷한 형태를 띄기 때문에 Gradient decent algorihtm을 통해서 cost를 minimise를 할 수 있다.
+
 """
 
 import tensorflow as tf
