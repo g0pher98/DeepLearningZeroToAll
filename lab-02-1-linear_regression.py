@@ -20,7 +20,7 @@ H(x)는 예측한 값이고 y는 결과다.
 
 # Lab 2 Linear Regression
 import tensorflow as tf
-tf.set_random_seed(777)  # for reproducibility
+tf.random.set_seed(777)  # for reproducibility
 
 # X and Y data
 x_train = [1, 2, 3]
