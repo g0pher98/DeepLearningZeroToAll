@@ -1,7 +1,7 @@
 keras
 matplotlib
 numpy
-tensorflow
+tensorflow==1.4.0
 scikit_learn
 # mxnet
 # sklearn
