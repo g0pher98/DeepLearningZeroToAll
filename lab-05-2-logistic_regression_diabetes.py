@@ -1,4 +1,8 @@
 # Lab 5 Logistic Regression Classifier
+"""
+당뇨병에 관련된 데이터 셋을 가지고 학습하는 코드.
+8개의 x변수들로 1개의 y값을 도출해 내는 것.
+"""
 import tensorflow as tf
 import numpy as np
 tf.set_random_seed(777)  # for reproducibility
