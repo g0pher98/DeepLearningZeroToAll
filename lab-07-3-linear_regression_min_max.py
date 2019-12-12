@@ -24,7 +24,7 @@ xy = np.array(
 )
 
 # very important. It does not work without it.
-xy = min_max_scaler(xy)
+xy = min_max_scaler(xy) # 이 부분이 데이터의 분포를 적당히 조절해주는 함수
 print(xy)
 
 '''

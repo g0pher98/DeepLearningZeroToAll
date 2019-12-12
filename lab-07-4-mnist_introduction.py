@@ -10,10 +10,11 @@ from tensorflow.examples.tutorials.mnist import input_data
 # Check out https://www.tensorflow.org/get_started/mnist/beginners for
 # more information about the mnist dataset
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+# one_hot을 true로 설정해주면 one_hot 방식을 사용하지 않아도 알아서 잘 던져준다.
 
 nb_classes = 10
 
-# MNIST data image of shape 28 * 28 = 784
+# MNIST data image of shape 28 * 28 = 784 => 784픽셀
 X = tf.placeholder(tf.float32, [None, 784])
 # 0 - 9 digits recognition = 10 classes
 Y = tf.placeholder(tf.float32, [None, nb_classes])
@@ -34,7 +35,7 @@ accuracy = tf.reduce_mean(tf.cast(is_correct, tf.float32))
 
 # parameters
 num_epochs = 15
-batch_size = 100
+batch_size = 100 # 데이터의 양이 방대하기 때문에 한번에 읽어들일 양을 말한다.
 num_iterations = int(mnist.train.num_examples / batch_size)
 
 with tf.Session() as sess:
@@ -42,8 +43,9 @@ with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
     # Training cycle
     for epoch in range(num_epochs):
+        # 전체 데이터셋을 한번 돈 것을 epoch이라고 한다.
+        # 예를 들어 1000개의 데이터셋이 있는데 batch_size가 500이면 2epoch를 돈다.
         avg_cost = 0
-
         for i in range(num_iterations):
             batch_xs, batch_ys = mnist.train.next_batch(batch_size)
             _, cost_val = sess.run([train, cost], feed_dict={X: batch_xs, Y: batch_ys})
@@ -60,6 +62,7 @@ with tf.Session() as sess:
             session=sess, feed_dict={X: mnist.test.images, Y: mnist.test.labels}
         ),
     )
+    # sess.run() 대신 tensor.eval()를 사용할수도 있다.
 
     # Get one and predict
     r = random.randint(0, mnist.test.num_examples - 1)
