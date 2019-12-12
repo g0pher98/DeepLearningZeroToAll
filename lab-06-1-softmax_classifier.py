@@ -1,4 +1,12 @@
+# -*- coding: utf-8 -*-
 # Lab 6 Softmax Classifier
+"""
+A B C 등급을 나눈다고 가정하자. 지난 5강에서 들었던 Sigmoid function을 이용한 Binary Classification을 복합적으로 이용하여 충분히 구현할 수 있다. A or not인 function, B or not인 function 그리고 C or not인 function을 이용하여 인풋에 따라 Binary가 아닌 Multinomial Classification을 구현할 수 있다.
+
+위와 같이 개별적인 Binary Classification을 통해 나오는 결과값이 있다. 이것은 개별적인(A, B, C)사건에 대한 예측이다. 예를들어 결과가 A:2.0, B:1.0, C:0.1 이렇게 개별 결과가 나왔을 때, 이를 Softmax function을 이용하면 각 개별 사건의 합이 1이 되도록 만들 수 있다. A:0.7, B:0.2, C:0.4 와 같이 말이다. 이렇게 되면 이를 개별 사건의 결과라기보다는 해당 선택지의 확률로 볼 수 있게된다. 더해서 One-Hot encoding 기법을 이용하면 1.0, 0.0, 0.0의 결과를 얻을 수 있다. 가장 큰 확률을 선택하는 방법이다.
+
+"""
+
 import tensorflow as tf
 tf.set_random_seed(777)  # for reproducibility
 
