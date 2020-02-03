@@ -1,3 +1,21 @@
+# -*- coding: utf-8 -*-
+'''
+g = wx 이고 f(x) = g(x) + b 일때, w가 f에 미치는 영향은 af/ax(미분값)이다.
+ag/ax = w
+ag/aw = x
+af/ab = 1
+af/ag = 1
+이므로
+af/ax = af/ag * ag/ax = 1 * w = w 이다.
+
+sigmoid 미분법
+g(z) = 1/(1+e^-z) 는 sigmoid의 모습이다. 이것을 아래와 같이 풀 수 있다.
+
+z ==> (*-1) ==> exp ==> (+1) ==> (1/x) ==> g
+위 그래프를 g에서부터 반대로 미분해가면서 g에 대한 z의 미분이 가능하다.
+
+'''
+
 # Lab 9 XOR
 import tensorflow as tf
 import numpy as np
